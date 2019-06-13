@@ -52,7 +52,9 @@ public class OCRMain {
         ArrayList<TrainingImageSpec> specs = getTraningImages();
         HashMap<Character, ArrayList<TrainingImage>> images = getTrainingImageHashMap(specs);
         scanner.addTrainingImages(images);
-        BufferedImage targetImage = ImageIO.read(new File("./ocrTests/shuffledDigits.jpg"));
+        // BufferedImage targetImage = ImageIO.read(new File("./ocrTests/shuffledDigits.jpg"));
+        BufferedImage targetImage = ImageIO.read(new File("./ocrTests/digits-multiline.png"));
+        
         String scaned = scanner.scan(targetImage, 0,0,0,0, null);
         System.out.println("scaned: " + scaned);
     }
